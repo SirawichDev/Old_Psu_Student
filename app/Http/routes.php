@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home',function (){
+    return view('Home');
+});
+
+#Route::post('/suc',function () {
+#  echo "fuck me!!";
+#});
+Route::post('/suc','loginController@login');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+Auth::routes();
